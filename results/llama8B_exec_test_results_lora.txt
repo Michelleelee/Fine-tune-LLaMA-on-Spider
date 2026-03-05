@@ -1,0 +1,229 @@
+eval_err_num:1
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/e_commerce/e_commerce.sqlite pred_err=no such column: order_status_code pred_sql=SELECT order_id,  order_status_code,  count(*) FROM Order_items GROUP BY order_id
+eval_err_num:2
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/e_commerce/e_commerce.sqlite pred_err=no such column: order_status_code pred_sql=SELECT count(*),  order_status_code,  order_id FROM Order_items GROUP BY order_id
+eval_err_num:3
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/e_commerce/e_commerce.sqlite pred_err=no such column: T1.product_price pred_sql=SELECT order_id,  sum(T1.product_price) FROM order_items AS T1 JOIN products AS T2 ON T1.product_id  =  T2.product_id GROUP BY order_id ORDER BY sum(T1.product_price) ASC LIMIT 1
+eval_err_num:4
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/e_commerce/e_commerce.sqlite pred_err=no such column: product_price pred_sql=SELECT order_id,  sum(product_price) FROM order_items GROUP BY order_id ORDER BY sum(product_price) ASC LIMIT 1
+eval_err_num:5
+eval_err_num:6
+eval_err_num:7
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/e_commerce/e_commerce.sqlite pred_err=no such column: T2.product_price pred_sql=SELECT T1.order_id,  T1.date_order_placed,  sum(T2.product_price) FROM orders AS T1 JOIN order_items AS T2 ON T1.order_id  =  T2.order_id GROUP BY T1.order_id
+eval_err_num:8
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/e_commerce/e_commerce.sqlite pred_err=no such column: T2.invoice_number pred_sql=SELECT T1.order_id,  T1.date_order_placed,  T2.invoice_number,  T2.invoice_status_code,  T2.invoice_date,  T3.product_id,  T3.order_item_id,  T3.order_item_status_code,  T4.product_name,  T4.product_price FROM orders AS T1 JOIN order_items AS T2 ON T1.order_id  =  T2.order_id JOIN shipment_items AS 
+eval_err_num:9
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/e_commerce/e_commerce.sqlite pred_err=no such column: T3.product_name pred_sql=SELECT T1.customer_first_name,  T3.product_name FROM customers AS T1 JOIN orders AS T2 ON T1.customer_id  =  T2.customer_id JOIN order_items AS T3 ON T2.order_id  =  T3.order_id
+eval_err_num:10
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/e_commerce/e_commerce.sqlite pred_err=no such column: T3.product_name pred_sql=SELECT T1.customer_first_name,  T3.product_name FROM customers AS T1 JOIN orders AS T2 ON T1.customer_id  =  T2.customer_id JOIN order_items AS T3 ON T2.order_id  =  T3.order_id
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/e_commerce/e_commerce.sqlite pred_err=ambiguous column name: product_id pred_sql=SELECT product_id,  product_description FROM Order_items AS T1 JOIN Products AS T2 ON T1.product_id  =  T2.product_id GROUP BY T1.product_id HAVING count(*)  >  3
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/vehicle_driver/vehicle_driver.sqlite pred_err=misuse of aggregate function count() pred_sql=SELECT max(count(*)),  driver_id FROM vehicle_driver GROUP BY driver_id ORDER BY count(*) DESC LIMIT 1
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/vehicle_driver/vehicle_driver.sqlite pred_err=ambiguous column name: Vehicle_ID pred_sql=SELECT Vehicle_ID,  Model FROM vehicle AS T1 JOIN vehicle_driver AS T2 ON T1.Vehicle_ID  =  T2.Vehicle_ID JOIN driver AS T3 ON T2.Driver_ID  =  T3.Driver_ID WHERE T3.Name  =  'Jeff Gordon' GROUP BY T1.Vehicle_ID,  T1.Model HAVING COUNT(*)  >  2 UNION SELECT Vehicle_ID,  Model FROM vehicle AS T1 JOIN
+eval_err_num:11
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/online_exams/online_exams.sqlite pred_err=no such table: Comments pred_sql=SELECT DISTINCT T1.Student_Answer_Text FROM Student_Answers AS T1 JOIN Comments AS T2 ON T1.Student_Answer_ID  =  T2.Student_Answer_ID WHERE T2.Comments  =  "Normal"
+eval_err_num:12
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/online_exams/online_exams.sqlite pred_err=no such column: T1.Date_of_Answer pred_sql=SELECT T1.First_Name,  T1.Date_of_Answer FROM Students AS T1 JOIN Student_Answers AS T2 ON T1.Student_ID  =  T2.Student_ID
+eval_err_num:13
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/online_exams/online_exams.sqlite pred_err=no such column: T1.Date_of_Answer pred_sql=SELECT T1.First_Name,  T1.Date_of_Answer FROM Students AS T1 JOIN Student_Answers AS T2 ON T1.Student_ID  =  T2.Student_ID
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/customers_and_orders/customers_and_orders.sqlite pred_err=ambiguous column name: customer_id pred_sql=SELECT customer_name,  customer_id,  count(*) FROM customers AS T1 JOIN customer_orders AS T2 ON T1.customer_id  =  T2.customer_id GROUP BY customer_id
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/customers_and_orders/customers_and_orders.sqlite pred_err=ambiguous column name: customer_id pred_sql=SELECT customer_name,  customer_id,  count(*) FROM customers AS T1 JOIN customer_orders AS T2 ON T1.customer_id  =  T2.customer_id GROUP BY T1.customer_id
+eval_err_num:14
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/customers_and_orders/customers_and_orders.sqlite pred_err=no such column: order_date pred_sql=SELECT order_date,  order_id FROM Order_items WHERE order_quantity  >  6 OR order_id IN (SELECT order_id FROM Order_items GROUP BY order_id HAVING count(*)  >  3)
+eval_err_num:15
+eval_err_num:16
+eval_err_num:17
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/government_shift/government_shift.sqlite pred_err=no such column: Service_Details pred_sql=SELECT Service_ID,  Service_Details FROM Services EXCEPT SELECT Service_ID,  Service_Details FROM Customers_and_Services
+eval_err_num:18
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/vehicle_rent/vehicle_rent.sqlite pred_err=no such column: T3.total_hours pred_sql=SELECT T1.name,  T3.total_hours FROM Vehicles AS T1 JOIN Renting_history AS T2 ON T1.id  =  T2.vehicles_id JOIN Customers AS T3 ON T2.customer_id  =  T3.id
+eval_err_num:19
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/cre_Students_Information_Systems/cre_Students_Information_Systems.sqlite pred_err=no such column: T3.address_type_description pred_sql=SELECT T1.student_details,  T3.address_type_description FROM Students AS T1 JOIN Students_Addresses AS T2 ON T1.student_id  =  T2.student_id JOIN Addresses AS T3 ON T2.address_id  =  T3.address_id
+eval_err_num:20
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/cre_Students_Information_Systems/cre_Students_Information_Systems.sqlite pred_err=no such column: T3.address_type_description pred_sql=SELECT T1.student_details,  T3.address_type_description FROM Students AS T1 JOIN Students_Addresses AS T2 ON T1.student_id  =  T2.student_id JOIN Addresses AS T3 ON T2.address_id  =  T3.address_id
+eval_err_num:21
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/cre_Students_Information_Systems/cre_Students_Information_Systems.sqlite pred_err=no such column: T2.student_details pred_sql=SELECT T1.teacher_details,  T2.student_details FROM Teachers AS T1 JOIN Classes AS T2 ON T1.teacher_id  =  T2.teacher_id JOIN Students AS T3 ON T2.student_id  =  T3.student_id
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/cre_Students_Information_Systems/cre_Students_Information_Systems.sqlite pred_err=misuse of aggregate function count() pred_sql=SELECT max(count(*) ),  teacher_id FROM classes GROUP BY teacher_id ORDER BY count(*) DESC LIMIT 1
+eval_err_num:22
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/cre_Students_Information_Systems/cre_Students_Information_Systems.sqlite pred_err=no such column: T1.date_from pred_sql=SELECT T1.date_from,  T1.date_to FROM Addresses AS T1 JOIN Students_Addresses AS T2 ON T1.address_id  =  T2.address_id JOIN Students AS T3 ON T2.student_id  =  T3.student_id JOIN Transcripts AS T4 ON T3.student_id  =  T4.student_id GROUP BY T2.student_id HAVING count(*)  =  2
+eval_err_num:23
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/book_1/book_1.sqlite pred_err=no such column: T2.Name pred_sql=SELECT T1.Title,  T2.Name FROM Book AS T1 JOIN Author_Book AS T2 ON T1.ISBN  =  T2.ISBN JOIN Author AS T3 ON T2.Author  =  T3.idAuthor
+eval_err_num:24
+eval_err_num:25
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/restaurant_bills/restaurant_bills.sqlite pred_err=no such column: T3.Dish_Name pred_sql=SELECT T1.Name,  T3.Dish_Name FROM customer AS T1 JOIN customer_order AS T2 ON T1.Customer_ID  =  T2.Customer_ID JOIN branch AS T3 ON T2.Branch_ID  =  T3.Branch_ID
+eval_err_num:26
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/restaurant_bills/restaurant_bills.sqlite pred_err=no such column: T3.Dish_Name pred_sql=SELECT T1.Name,  T3.Dish_Name FROM customer AS T1 JOIN customer_order AS T2 ON T1.Customer_ID  =  T2.Customer_ID JOIN branch AS T3 ON T2.Branch_ID  =  T3.Branch_ID ORDER BY T2.Quantity DESC
+eval_err_num:27
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/restaurant_bills/restaurant_bills.sqlite pred_err=no such column: T3.dish_name pred_sql=SELECT T1.name,  T3.dish_name FROM customer AS T1 JOIN customer_order AS T2 ON T1.customer_id  =  T2.customer_id JOIN branch AS T3 ON T2.branch_id  =  T3.branch_id ORDER BY T2.quantity DESC
+eval_err_num:28
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/club_leader/club_leader.sqlite pred_err=no such column: T2.name pred_sql=SELECT T1.club_name,  T2.name FROM club AS T1 JOIN club_leader AS T2 ON T1.club_id  =  T2.club_id JOIN member AS T3 ON T2.member_id  =  T3.member_id
+eval_err_num:29
+eval_err_num:30
+eval_err_num:31
+eval_err_num:32
+eval_err_num:33
+eval_err_num:34
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/cre_Doc_and_collections/cre_Doc_and_collections.sqlite pred_err=no such column: T1.document_subset_name pred_sql=SELECT T1.document_subset_id,  T1.document_subset_name,  count(*) FROM document_subset_members AS T1 JOIN document_objects AS T2 ON T1.document_object_id  =  T2.document_object_id GROUP BY T1.document_subset_id
+eval_err_num:35
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/cre_Doc_and_collections/cre_Doc_and_collections.sqlite pred_err=no such column: T1.document_subset_name pred_sql=SELECT T1.document_subset_name,  T1.document_subset_id,  T2.document_object_id FROM document_subset_members AS T1 JOIN document_objects AS T2 ON T1.document_object_id  =  T2.document_object_id
+eval_err_num:36
+eval_err_num:37
+eval_err_num:38
+eval_err_num:39
+eval_err_num:40
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/cre_Doc_and_collections/cre_Doc_and_collections.sqlite pred_err=no such column: T1.Collection_ID pred_sql=SELECT T1.Collection_Subset_Name FROM Collection_Subsets AS T1 JOIN Collections AS T2 ON T1.Collection_ID  =  T2.Collection_ID WHERE T2.Collection_Name  =  'Best'
+eval_err_num:41
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/sing_contest/sing_contest.sqlite pred_err=no such column: language pred_sql=SELECT avg(rhythm_tempo),  language FROM performance_score GROUP BY language
+eval_err_num:42
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/address_1/address_1.sqlite pred_err=no such column: country pred_sql=SELECT country FROM student GROUP BY country ORDER BY count(*) ASC LIMIT 1
+eval_err_num:43
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/address_1/address_1.sqlite pred_err=no such column: country pred_sql=SELECT country FROM student GROUP BY country ORDER BY count(*) ASC LIMIT 1
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/boat_1/boat_1.sqlite pred_err=ambiguous column name: name pred_sql=SELECT name FROM sailors AS T1 JOIN reserves AS T2 ON T1.sid  =  T2.sid JOIN boats AS T3 ON T2.bid  =  T3.bid WHERE T3.bid  =  102
+eval_err_num:44
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/boat_1/boat_1.sqlite pred_err=no such column: T1.name pred_sql=SELECT name,  sid FROM Sailors WHERE rating  >  2 INTERSECT SELECT T1.name,  T1.sid FROM Reserves AS T1 JOIN Sailors AS T2 ON T1.sid  =  T2.sid
+eval_err_num:45
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/boat_1/boat_1.sqlite pred_err=no such column: T1.name pred_sql=SELECT name,  sid FROM Sailors WHERE rating  >=  3 INTERSECT SELECT T1.name,  T1.sid FROM Reserves AS T1 JOIN Sailors AS T2 ON T1.sid  =  T2.sid
+eval_err_num:46
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/headphone_store/headphone_store.sqlite pred_err=no such column: T3.Quantity pred_sql=SELECT T1.Name,  sum(T3.Quantity) FROM store AS T1 JOIN stock AS T2 ON T1.Store_ID  =  T2.Store_ID JOIN headphone AS T3 ON T2.Headphone_ID  =  T3.Headphone_ID GROUP BY T1.Store_ID
+eval_err_num:47
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/aan_1/aan_1.sqlite pred_err=no such column: T4.affiliation_id pred_sql=SELECT T1.title,  T1.paper_id FROM paper AS T1 JOIN affiliation AS T2 ON T1.paper_id  =  T2.affiliation_id JOIN author_list AS T3 ON T1.paper_id  =  T3.paper_id JOIN author AS T4 ON T3.author_id  =  T4.author_id JOIN affiliation AS T5 ON T4.affiliation_id  =  T5.affiliation_id WHERE T5.name  =  "Har
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/aan_1/aan_1.sqlite pred_err=ambiguous column name: paper_id pred_sql=SELECT title,  paper_id FROM paper AS T1 JOIN author_list AS T2 ON T1.paper_id  =  T2.paper_id JOIN author AS T3 ON T2.author_id  =  T3.author_id WHERE T3.name  =  "Mckeown"
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/aan_1/aan_1.sqlite pred_err=ambiguous column name: paper_id pred_sql=SELECT title,  paper_id FROM paper AS T1 JOIN author_list AS T2 ON T1.paper_id  =  T2.paper_id JOIN author AS T3 ON T2.author_id  =  T3.author_id WHERE T3.name  =  "Mckeown"
+eval_err_num:48
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/aan_1/aan_1.sqlite pred_err=no such column: T4.affiliation_id pred_sql=SELECT T1.title,  T1.paper_id FROM paper AS T1 JOIN affiliation AS T2 ON T1.paper_id  =  T2.affiliation_id JOIN author_list AS T3 ON T1.paper_id  =  T3.paper_id JOIN author AS T4 ON T3.author_id  =  T4.author_id JOIN affiliation AS T5 ON T4.affiliation_id  =  T5.affiliation_id WHERE T5.name  =  "Sta
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/aan_1/aan_1.sqlite pred_err=ambiguous column name: paper_id pred_sql=SELECT title,  paper_id FROM paper AS T1 JOIN author_list AS T2 ON T1.paper_id  =  T2.paper_id JOIN author AS T3 ON T2.author_id  =  T3.author_id WHERE T3.name  =  "Mckeown, Kathleen" INTERSECT SELECT title,  paper_id FROM paper AS T1 JOIN author_list AS T2 ON T1.paper_id  =  T2.paper_id JOIN author
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/aan_1/aan_1.sqlite pred_err=ambiguous column name: paper_id pred_sql=SELECT title,  paper_id FROM paper AS T1 JOIN author_list AS T2 ON T1.paper_id  =  T2.paper_id JOIN author AS T3 ON T2.author_id  =  T3.author_id WHERE T3.name  =  "Mckeown" EXCEPT SELECT title,  paper_id FROM paper AS T1 JOIN author_list AS T2 ON T1.paper_id  =  T2.paper_id JOIN author AS T3 ON T2.
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/aan_1/aan_1.sqlite pred_err=ambiguous column name: paper_id pred_sql=SELECT title,  paper_id FROM paper AS T1 JOIN author_list AS T2 ON T1.paper_id  =  T2.paper_id JOIN author AS T3 ON T2.author_id  =  T3.author_id WHERE T3.name  =  "McKeown" EXCEPT SELECT title,  paper_id FROM paper AS T1 JOIN author_list AS T2 ON T1.paper_id  =  T2.paper_id JOIN author AS T3 ON T2.
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/aan_1/aan_1.sqlite pred_err=ambiguous column name: paper_id pred_sql=SELECT title,  paper_id FROM paper AS T1 JOIN author_list AS T2 ON T1.paper_id  =  T2.paper_id JOIN author AS T3 ON T2.author_id  =  T3.author_id WHERE T3.name  =  "Mckeown, Kathleen" OR T3.name  =  "Rambow, Owen"
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/aan_1/aan_1.sqlite pred_err=ambiguous column name: name pred_sql=SELECT name,  count(*) FROM author AS T1 JOIN affiliation AS T2 ON T1.author_id  =  T2.affiliation_id JOIN author_list AS T3 ON T1.author_id  =  T3.author_id GROUP BY T1.name ORDER BY count(*) DESC
+eval_err_num:49
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/aan_1/aan_1.sqlite pred_err=no such column: author_id pred_sql=SELECT name FROM author WHERE author_id IN (SELECT author_id FROM paper GROUP BY author_id HAVING count(*)  =  1)
+eval_err_num:50
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/aan_1/aan_1.sqlite pred_err=no such column: T2.author_id pred_sql=SELECT count(*) FROM citation AS T1 JOIN paper AS T2 ON T1.cited_paper_id  =  T2.paper_id JOIN author AS T3 ON T2.author_id  =  T3.author_id WHERE T3.name  =  "Mckeown, Kathleen"
+eval_err_num:51
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/aan_1/aan_1.sqlite pred_err=no such table: affiliation_list pred_sql=SELECT T1.name FROM affiliation AS T1 JOIN affiliation_list AS T2 ON T1.affiliation_id  =  T2.affiliation_id JOIN paper AS T3 ON T2.paper_id  =  T3.paper_id WHERE T3.year  =  2009 GROUP BY T1.name ORDER BY count(*) DESC LIMIT 3
+eval_err_num:52
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/aan_1/aan_1.sqlite pred_err=no such column: T1.affiliation_id pred_sql=SELECT T1.name FROM author AS T1 JOIN affiliation AS T2 ON T1.affiliation_id  =  T2.affiliation_id JOIN author_list AS T3 ON T1.author_id  =  T3.author_id JOIN paper AS T4 ON T3.paper_id  =  T4.paper_id JOIN author AS T5 ON T4.paper_id  =  T5.author_id WHERE T5.name  =  "Mckeown, Kathleen" GROUP BY 
+eval_err_num:53
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/aan_1/aan_1.sqlite pred_err=no such column: T1.affiliation_id pred_sql=SELECT T1.name FROM author AS T1 JOIN affiliation AS T2 ON T1.affiliation_id  =  T2.affiliation_id JOIN author_list AS T3 ON T1.author_id  =  T3.author_id JOIN paper AS T4 ON T3.paper_id  =  T4.paper_id JOIN author AS T5 ON T4.author_id  =  T5.author_id WHERE T5.name  =  "Mckeown, Kathleen" GROUP BY
+eval_err_num:54
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/aan_1/aan_1.sqlite pred_err=no such column: T3.affiliation_id pred_sql=SELECT T1.name FROM affiliation AS T1 JOIN affiliation AS T2 ON T1.address LIKE '%China%' JOIN paper AS T3 ON T1.affiliation_id  =  T3.affiliation_id GROUP BY T1.name ORDER BY count(*) DESC LIMIT 1
+eval_err_num:55
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/aan_1/aan_1.sqlite pred_err=interrupted pred_sql=SELECT count(*) FROM author WHERE author_id NOT IN (SELECT author_id FROM paper AS T1 JOIN citation AS T2 ON T1.paper_id  =  T2.cited_paper_id GROUP BY T1.paper_id HAVING count(*)  >  50)
+eval_err_num:56
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/aan_1/aan_1.sqlite pred_err=interrupted pred_sql=SELECT count(*) FROM author WHERE author_id NOT IN (SELECT author_id FROM paper AS t1 JOIN citation AS t2 ON t1.paper_id  =  t2.cited_paper_id GROUP BY t1.paper_id HAVING count(*)  >  50)
+eval_err_num:57
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/aan_1/aan_1.sqlite pred_err=interrupted pred_sql=SELECT name FROM author WHERE author_id NOT IN (SELECT author_id FROM paper WHERE venue  =  'ACL')
+eval_err_num:58
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/aan_1/aan_1.sqlite pred_err=interrupted pred_sql=SELECT name FROM author WHERE author_id NOT IN (SELECT author_id FROM paper WHERE venue  =  'ACL')
+eval_err_num:59
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/conference/conference.sqlite pred_err=no such column: Conference_Name pred_sql=SELECT Conference_Name,  count(*) FROM conference_participation GROUP BY Conference_Name
+eval_err_num:60
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/pilot_1/pilot_1.sqlite pred_err=no such table: pilots pred_sql=SELECT pilot_name FROM pilots WHERE age  <  (SELECT avg(age) FROM pilots) ORDER BY age
+eval_err_num:61
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/pilot_1/pilot_1.sqlite pred_err=no such table: pilots pred_sql=SELECT * FROM pilots WHERE age  <  30
+eval_err_num:62
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/pilot_1/pilot_1.sqlite pred_err=no such table: pilots pred_sql=SELECT * FROM pilots WHERE age  <  30
+eval_err_num:63
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/pilot_1/pilot_1.sqlite pred_err=no such table: pilotskill pred_sql=SELECT count(*) FROM pilotskill WHERE age  >  40
+eval_err_num:64
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/pilot_1/pilot_1.sqlite pred_err=no such table: pilotskill pred_sql=SELECT count(*) FROM pilotskill WHERE age  >  40
+eval_err_num:65
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/pilot_1/pilot_1.sqlite pred_err=no such table: pilotskill pred_sql=SELECT pilot_name FROM pilotskill ORDER BY age DESC
+eval_err_num:66
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/pilot_1/pilot_1.sqlite pred_err=no such table: pilotskill pred_sql=SELECT avg(age),  min(age) FROM pilotskill
+eval_err_num:67
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/pilot_1/pilot_1.sqlite pred_err=no such table: pilotskill pred_sql=SELECT avg(age),  min(age) FROM pilotskill
+eval_err_num:68
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/pilot_1/pilot_1.sqlite pred_err=no such table: pilots pred_sql=SELECT pilot_name,  max(age) FROM pilots GROUP BY pilot_name
+eval_err_num:69
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/pilot_1/pilot_1.sqlite pred_err=no such table: pilotskill pred_sql=SELECT pilot_name,  max(age) FROM pilotskill GROUP BY pilot_name
+eval_err_num:70
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/art_1/art_1.sqlite pred_err=no such column: lname pred_sql=SELECT painterID,  avg(height_mm),  avg(width_mm) FROM Paintings GROUP BY painterID ORDER BY lname
+eval_err_num:71
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/art_1/art_1.sqlite pred_err=no such table: Medium pred_sql=SELECT T1.paintingID,  T1.location,  T1.title FROM Paintings AS T1 JOIN Medium AS T2 ON T1.mediumOn  =  T2.medium WHERE T2.medium  =  'Oil' ORDER BY T1.year
+eval_err_num:72
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/art_1/art_1.sqlite pred_err=no such column: T1.sculptorID pred_sql=SELECT T1.fname,  T1.lname FROM Artists AS T1 JOIN Paintings AS T2 ON T1.artistID  =  T2.painterID EXCEPT SELECT T1.fname,  T1.lname FROM Artists AS T1 JOIN Sculptures AS T2 ON T1.sculptorID  =  T2.sculptorID
+eval_err_num:73
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/real_estate_rentals/real_estate_rentals.sqlite pred_err=no such column: T2.user_category_description pred_sql=SELECT T1.age_category_description FROM Ref_Age_Categories AS T1 JOIN Users AS T2 ON T1.age_category_code  =  T2.age_category_code WHERE T2.user_category_description LIKE '%Mother%'
+eval_err_num:74
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/real_estate_rentals/real_estate_rentals.sqlite pred_err=no such column: T1.room_count pred_sql=SELECT avg(T1.room_count) FROM Rooms AS T1 JOIN Property_Features AS T2 ON T1.property_id  =  T2.property_id WHERE T2.feature_name  =  "Garden"
+eval_err_num:75
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/real_estate_rentals/real_estate_rentals.sqlite pred_err=no such column: T2.feature_name pred_sql=SELECT avg(T1.room_count) FROM Properties AS T1 JOIN Property_Features AS T2 ON T1.property_id  =  T2.property_id WHERE T2.feature_name  =  "Garden"
+eval_err_num:76
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/real_estate_rentals/real_estate_rentals.sqlite pred_err=no such column: T3.feature_name pred_sql=SELECT T1.town_city FROM Addresses AS T1 JOIN Properties AS T2 ON T1.address_id  =  T2.property_address_id JOIN Property_Features AS T3 ON T2.property_id  =  T3.property_id WHERE T3.feature_name  =  'Swimming Pool'
+eval_err_num:77
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/real_estate_rentals/real_estate_rentals.sqlite pred_err=no such column: T3.feature_name pred_sql=SELECT T1.town_city FROM Addresses AS T1 JOIN Properties AS T2 ON T1.address_id  =  T2.property_address_id JOIN Property_Features AS T3 ON T2.property_id  =  T3.property_id WHERE T3.feature_name  =  'Swimming Pool'
+eval_err_num:78
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/real_estate_rentals/real_estate_rentals.sqlite pred_err=no such column: T1.user_address_id pred_sql=SELECT T1.line_1_number_building,  T1.line_2_number_street,  T1.town_city FROM Addresses AS T1 JOIN Users AS T2 ON T1.user_address_id  =  T2.user_address_id JOIN Ref_Age_Categories AS T3 ON T2.age_category_code  =  T3.age_category_code WHERE T3.age_category_description  =  'Senior'
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/real_estate_rentals/real_estate_rentals.sqlite pred_err=misuse of aggregate: count() pred_sql=SELECT property_type_description,  property_type_code FROM Ref_Property_Types ORDER BY count(*) DESC LIMIT 1
+eval_err_num:79
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/real_estate_rentals/real_estate_rentals.sqlite pred_err=no such column: T1.user_address_id pred_sql=SELECT T1.country FROM Addresses AS T1 JOIN Users AS T2 ON T1.user_address_id  =  T2.user_address_id WHERE T2.first_name  =  "Robbie"
+eval_err_num:80
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/real_estate_rentals/real_estate_rentals.sqlite pred_err=no such column: search_string pred_sql=SELECT search_string FROM Users AS T1 JOIN User_Property_History AS T2 ON T1.user_id  =  T2.user_id WHERE T1.user_id NOT IN (SELECT owner_user_id FROM Properties)
+eval_err_num:81
+eval_err_num:82
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/bike_racing/bike_racing.sqlite pred_err=no such column: product_name pred_sql=SELECT name,  nation,  result FROM cyclist WHERE id NOT IN (SELECT cyclist_id FROM cyclists_own_bikes WHERE product_name  =  'racing bike')
+eval_err_num:83
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/bakery_1/bakery_1.sqlite pred_err=no such column: T2.food pred_sql=SELECT avg(T1.price),  min(T1.price),  max(T1.price),  T2.food FROM goods AS T1 JOIN items AS T2 ON T1.id  =  T2.item GROUP BY T2.food
+eval_err_num:84
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/bakery_1/bakery_1.sqlite pred_err=no such column: T2.food pred_sql=SELECT avg(T1.price),  T2.food FROM goods AS T1 JOIN items AS T2 ON T1.id  =  T2.item GROUP BY T2.food
+eval_err_num:85
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/bakery_1/bakery_1.sqlite pred_err=no such column: T2.food pred_sql=SELECT avg(T1.price),  T2.food FROM goods AS T1 JOIN items AS T2 ON T1.id  =  T2.item GROUP BY T2.food
+eval_err_num:86
+eval_err_num:87
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/bakery_1/bakery_1.sqlite pred_err=no such column: Price pred_sql=SELECT ReceiptNumber FROM receipts WHERE Date  =  (SELECT min(Date) FROM receipts) OR Price  >  10
+eval_err_num:88
+eval_err_num:89
+eval_err_num:90
+eval_err_num:91
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/bakery_1/bakery_1.sqlite pred_err=no such column: Flavor pred_sql=SELECT Item FROM items WHERE Item IN (SELECT Item FROM items WHERE Item IN (SELECT Item FROM items WHERE Flavor  =  "chocolate") GROUP BY Item HAVING count(*)  <=  10)
+eval_err_num:92
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/bakery_1/bakery_1.sqlite pred_err=no such column: T2.price pred_sql=SELECT T1.id FROM customers AS T1 JOIN receipts AS T2 ON T1.id  =  T2.customerid GROUP BY T1.id HAVING sum(T2.price)  >  150
+eval_err_num:93
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/bakery_1/bakery_1.sqlite pred_err=no such column: T2.price pred_sql=SELECT T1.id FROM customers AS T1 JOIN receipts AS T2 ON T1.id  =  T2.customerid GROUP BY T1.id HAVING sum(T2.price)  >  150
+eval_err_num:94
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/warehouse_1/warehouse_1.sqlite pred_err=no such column: LOCATION pred_sql=SELECT Contents FROM Boxes WHERE LOCATION  =  "Chicago" INTERSECT SELECT Contents FROM Boxes WHERE LOCATION  =  "New York"
+eval_err_num:95
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/warehouse_1/warehouse_1.sqlite pred_err=no such column: Location pred_sql=SELECT Contents FROM Boxes WHERE Code NOT IN (SELECT Code FROM Boxes WHERE Location  =  "New York")
+eval_err_num:96
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/warehouse_1/warehouse_1.sqlite pred_err=no such column: LOCATION pred_sql=SELECT Contents FROM Boxes WHERE Contents NOT IN (SELECT Contents FROM Boxes WHERE LOCATION  =  "New York")
+eval_err_num:97
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/warehouse_1/warehouse_1.sqlite pred_err=no such table: Contents pred_sql=SELECT count(DISTINCT T1.Warehouse) FROM Boxes AS T1 JOIN Contents AS T2 ON T1.Contents  =  T2.Code WHERE T2.Name  =  "Rocks"
+eval_err_num:98
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/university_rank/university_rank.sqlite pred_err=no such column: T1.Rank pred_sql=SELECT T1.Rank,  T1.Major_Name FROM major AS T1 JOIN major_ranking AS T2 ON T1.Major_ID  =  T2.Major_ID JOIN university AS T3 ON T2.University_ID  =  T3.University_ID WHERE T3.University_Name  =  "Augustana College"
+eval_err_num:99
+eval_err_num:100
+eval_err_num:101
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/planet_1/planet_1.sqlite pred_err=no such table: Position pred_sql=SELECT T1.Level FROM Has_Clearance AS T1 JOIN Employee AS T2 ON T1.Employee  =  T2.EmployeeID JOIN Position AS T3 ON T2.Position  =  T3.Position WHERE T3.Position  =  "Physician"
+eval_err_num:102
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/planet_1/planet_1.sqlite pred_err=no such table: Recipient pred_sql=SELECT T1.PackageNumber FROM Package AS T1 JOIN Recipient AS T2 ON T1.Recipient  =  T2.Name WHERE T2.Name  =  "Leo Wong"
+eval_err_num:103
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/planet_1/planet_1.sqlite pred_err=no such table: Recipient pred_sql=SELECT T1.PackageNumber FROM Package AS T1 JOIN Recipient AS T2 ON T1.Recipient  =  T2.Name WHERE T2.Name  =  "Leo Wong"
+eval_err_num:104
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/planet_1/planet_1.sqlite pred_err=no such column: T2.planet pred_sql=SELECT T1.name,  sum(T2.weight) FROM planet AS T1 JOIN package AS T2 ON T1.planetid  =  T2.planet GROUP BY T1.name
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/book_press/book_press.sqlite pred_err=ORDER BY clause should come after UNION not before pred_sql=SELECT Name FROM press ORDER BY Month_Profits_billion DESC LIMIT 1 UNION SELECT Name FROM press ORDER BY Month_Profits_billion ASC LIMIT 1
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/book_press/book_press.sqlite pred_err=ORDER BY clause should come after UNION not before pred_sql=SELECT Name FROM press ORDER BY Month_Profits_billion DESC LIMIT 1 UNION SELECT Name FROM press ORDER BY Month_Profits_billion ASC LIMIT 1
+eval_err_num:105
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/cre_Doc_Workflow/cre_Doc_Workflow.sqlite pred_err=no such column: T2.process_status_description pred_sql=SELECT T1.process_outcome_description,  T2.process_status_description FROM Process_Outcomes AS T1 JOIN Documents_Processes AS T2 ON T1.process_outcome_code  =  T2.process_outcome_code JOIN Documents AS T3 ON T2.document_id  =  T3.document_id WHERE T3.document_id  =  0
+eval_err_num:106
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/cre_Doc_Workflow/cre_Doc_Workflow.sqlite pred_err=no such column: T2.staff_id pred_sql=SELECT T1.staff_id,  count(*) FROM Staff AS T1 JOIN Documents_Processes AS T2 ON T1.staff_id  =  T2.staff_id GROUP BY T1.staff_id
+eval_err_num:107
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/cre_Doc_Workflow/cre_Doc_Workflow.sqlite pred_err=no such column: T2.staff_role_code pred_sql=SELECT T1.staff_role_code,  count(*) FROM Ref_Staff_Roles AS T1 JOIN Documents_Processes AS T2 ON T1.staff_role_code  =  T2.staff_role_code GROUP BY T1.staff_role_code
+eval_err_num:108
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/advertising_agencies/advertising_agencies.sqlite pred_err=no such column: agency_details pred_sql=SELECT agency_id,  agency_details FROM Clients GROUP BY agency_id ORDER BY count(*) DESC LIMIT 1
+eval_err_num:109
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/advertising_agencies/advertising_agencies.sqlite pred_err=no such column: meeting_details pred_sql=SELECT meeting_type,  meeting_details FROM Meetings
+eval_err_num:110
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/advertising_agencies/advertising_agencies.sqlite pred_err=no such column: invoice_status pred_sql=SELECT invoice_id,  invoice_status FROM Payments
+eval_err_num:111
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/advertising_agencies/advertising_agencies.sqlite pred_err=no such column: invoice_status pred_sql=SELECT DISTINCT invoice_id,  invoice_status FROM Payments
+eval_err_num:112
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/advertising_agencies/advertising_agencies.sqlite pred_err=no such column: client_details pred_sql=SELECT meeting_id,  meeting_outcome,  meeting_type,  client_details FROM Meetings
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/advertising_agencies/advertising_agencies.sqlite pred_err=misuse of aggregate function count() pred_sql=SELECT staff_id,  count(*) FROM Staff_in_Meetings GROUP BY staff_id HAVING count(*)  =  (SELECT min(count(*)) FROM Staff_in_Meetings GROUP BY staff_id)
+eval_err_num:113
+eval_err_num:114
+eval_err_num:115
+[exec_error] db=/home/geniusjjjjj/data/spider/test_database/advertising_agencies/advertising_agencies.sqlite pred_err=no such column: T1.staff_id pred_sql=SELECT T1.start_date_time,  T1.end_date_time,  T2.client_details,  T3.staff_details FROM Meetings AS T1 JOIN Clients AS T2 ON T1.client_id  =  T2.client_id JOIN Staff AS T3 ON T1.staff_id  =  T3.staff_id
+                     easy                 medium               hard                 extra                all                 
+count                470                  857                  463                  357                  2147                
+=====================   EXECUTION ACCURACY     =====================
+execution            0.845                0.746                0.624                0.527                0.705               
