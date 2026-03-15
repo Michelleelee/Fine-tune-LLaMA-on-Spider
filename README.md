@@ -101,7 +101,7 @@ git clone https://github.com/Michelleelee/Fine-tune-LLaMA-on-Spider.git
 │
 ├── models/
 │   └── qlora_spider_pc/       # SFT model checkpoint
-│       └── qlora_spider_pc_adapter_20260203.tar.gz
+│       └── qlora_spider_pc_adapter_20240803.tar.gz
 │
 ├── outputs/                   # Inference predictions
 │   ├── pred_test.sql          # Baseline predictions
@@ -286,7 +286,7 @@ python data_prep.py \
 ```bash
 # Extract the SFT adapter checkpoint (if using the bundled tar.gz)
 cd ../models/qlora_spider_pc
-tar -xzf qlora_spider_pc_adapter_20260203.tar.gz
+tar -xzf qlora_spider_pc_adapter_20240803.tar.gz
 # This creates an `adapter/` directory with the LoRA weights
 cd ../../GRPO
 ```
