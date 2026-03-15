@@ -85,10 +85,10 @@ Clone this repo and arrange the project:
 
 ```bash
 cd ~/transformer
-git clone https://github.com/JOKERjjjjjjyz/Llama-3.1-8B-QLoRA-on-SPIDER.git
+git clone https://github.com/Michelleelee/Fine-tune-LLaMA-on-Spider.git
 
 # The full project tree:
-~/transformer/Llama-3.1-8B-QLoRA-on-SPIDER/   # This repo
+~/transformer/Fine-tune-LLaMA-on-Spider/   # This repo
 ├── README.md
 ├── SFT.md                     # Detailed SFT methodology guide (Chinese)
 │
@@ -128,7 +128,6 @@ git clone https://github.com/JOKERjjjjjjyz/Llama-3.1-8B-QLoRA-on-SPIDER.git
     ├── evaluate_grpo.py       # Post-training evaluation
     └── models/grpo_spider/
         ├── final_adapter/     # Final GRPO adapter after 3498 iterations
-        └── final_adapter.zip  # Archive to push to the repo
 ```
 
 ---
@@ -189,15 +188,15 @@ Edit `SPLIT`, `ADAPTER_DIR`, and `OUT_PRED` in the script to switch between dev/
 cd ~/transformer/spider
 python evaluation.py \
     --gold ~/data/spider/dev_gold.sql \
-    --pred ~/transformer/Llama-3.1-8B-QLoRA-on-SPIDER/outputs/pred_test_lora_pc.sql \
+    --pred ~/transformer/Fine-tune-LLaMA-on-Spider/outputs/pred_test_lora_pc.sql \
     --etype match \
     --db ~/data/spider/database \
     --table ~/data/spider/tables.json
 
 # Execution accuracy (run SQL, compare results, 5s timeout)
-python ~/transformer/Llama-3.1-8B-QLoRA-on-SPIDER/evaluation_adapt.py \
+python ~/transformer/Fine-tune-LLaMA-on-Spider/evaluation_adapt.py \
     --gold ~/data/spider/dev_gold.sql \
-    --pred ~/transformer/Llama-3.1-8B-QLoRA-on-SPIDER/outputs/pred_test_lora_pc.sql \
+    --pred ~/transformer/Fine-tune-LLaMA-on-Spider/outputs/pred_test_lora_pc.sql \
     --etype exec \
     --db ~/data/spider/database \
     --table ~/data/spider/tables.json \
