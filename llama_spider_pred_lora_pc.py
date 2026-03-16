@@ -19,10 +19,10 @@ TEST_TABLES = DATA_DIR / "test_tables.json"
 
 SPLIT = "test"  # "dev" or "test"
 
-OUT_PRED = Path("/home/geniusjjjjj/transformer/SFT/outputs") / f"pred_{SPLIT}_lora_pc.sql"
+OUT_PRED = Path("/home/geniusjjjjj/transformer/Fine-tune-LLaMA-on-Spider/outputs") / f"pred_{SPLIT}_lora_pc.sql"
 
 BASE_MODEL_ID = "meta-llama/Meta-Llama-3.1-8B-Instruct"
-ADAPTER_DIR = Path("/home/geniusjjjjj/transformer/SFT/models/qlora_spider_pc/adapter")  # <-- 按你新训练输出目录改
+ADAPTER_DIR = Path("/home/geniusjjjjj/transformer/Fine-tune-LLaMA-on-Spider/models/qlora_spider_pc/adapter")  # <-- 按你新训练输出目录改
 LOCAL_ONLY = False
 
 MAX_NEW_TOKENS = 256

@@ -187,19 +187,20 @@ Edit `SPLIT`, `ADAPTER_DIR`, and `OUT_PRED` in the script to switch between dev/
 # Match accuracy (exact SQL match)
 cd ~/transformer/spider
 python evaluation.py \
-    --gold ~/data/spider/dev_gold.sql \
+    --gold ~/data/spider/test_gold.sql \
     --pred ~/transformer/Fine-tune-LLaMA-on-Spider/outputs/pred_test_lora_pc.sql \
     --etype match \
-    --db ~/data/spider/database \
-    --table ~/data/spider/tables.json
+    --db ~/data/spider/test_database \
+    --table ~/data/spider/test_tables.json
 
 # Execution accuracy (run SQL, compare results, 5s timeout)
-python ~/transformer/Fine-tune-LLaMA-on-Spider/evaluation_adapt.py \
-    --gold ~/data/spider/dev_gold.sql \
+cp ~/transformer/Fine-tune-LLaMA-on-Spider/evaluation_adapt.py ~/transformer/spider/evaluation_adapt.py
+python ~/transformer/spider/evaluation_adapt.py \
+    --gold ~/data/spider/test_gold.sql \
     --pred ~/transformer/Fine-tune-LLaMA-on-Spider/outputs/pred_test_lora_pc.sql \
     --etype exec \
-    --db ~/data/spider/database \
-    --table ~/data/spider/tables.json \
+    --db ~/data/spider/test_database \
+    --table ~/data/spider/test_tables.json \
     --timeout 5
 ```
 
